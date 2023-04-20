@@ -13,6 +13,9 @@ import android.view.Menu
 import android.widget.ListView
 import android.widget.Toast
 import android.widget.SearchView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import edu.iest.sqlite.adapters.JuegosAdapter
 import edu.iest.sqlite.db.ManejadorBaseDatos
@@ -21,7 +24,7 @@ import edu.iest.sqlite.modelos.Juego
 
 class ListadoActivity : AppCompatActivity(), juegosInterface {
 
-    private lateinit var listView: ListView
+    private lateinit var listView: RecyclerView
     private var listaDeJuegos = ArrayList<Juego>()
     private lateinit var fab: FloatingActionButton
     private val ORDENAR_POR_NOMBRE : String  = "nombre"
@@ -105,8 +108,9 @@ class ListadoActivity : AppCompatActivity(), juegosInterface {
                 listaDeJuegos.add(juego)
             }while(cursor.moveToNext())
         }
-        val adapter: JuegosAdapter = JuegosAdapter(this, listaDeJuegos,this)
-        listView.adapter = adapter
+        val recyclerView = findViewById<RecyclerView>(R.id.listView)
+        recyclerView.adapter = JuegosAdapter(this, listaDeJuegos, this) // Reemplaza los parámetros con los tuyos propios
+        recyclerView.layoutManager = LinearLayoutManager(this) // Puedes usar otros diseños si lo deseas, como GridLayoutManager o StaggeredGridLayoutManager
 
     }
 
