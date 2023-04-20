@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Sqlite</string>
+    <string name="consola">Consola</string>
+    <string name="precio">Precio:</string>
+    <string name="guardar">Guardar</string>
+    <string name="nombre_del_juego">Nombre del Juego</string>
+    <string name="buscar">buscar</string>
+    <string name="editar">Editar</string>
+    <string name="ingrese_el_nombre_de_la_cancion">Ingrese el nombre de la cancion:</string>
+    <string name="plataforma_digital">Plataforma Digital</string>
+    <string name="cancion">cancion</string>
+</resources>
